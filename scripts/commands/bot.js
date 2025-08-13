@@ -28,7 +28,7 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
      return api.sendMessage("Hello, Hi, Bye bye. এটা সারা কি কিছু বলতে প্যারিস না তুই?😒", threadID);
    };
    if ((event.body.toLowerCase() == "Bot boss") || (event.body.toLowerCase() == "আবির কে")) {
-     return api.sendMessage("𝗡𝗔𝗬𝗘𝗠 𝗞𝗜𝗡𝗚\nhttps://www.facebook.com/NAYEM.KING.OK🥰🥀", threadID);
+     return api.sendMessage("PINIK ABIR\nhttps://www.facebook.com/share/1F75zo2NVK/", threadID);
    };
    if ((event.body.toLowerCase() == "lol") || (event.body.toLowerCase() == "lol player")) {
      return api.sendMessage("lol mne lots of love 😘", threadID);
