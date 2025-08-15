@@ -40,7 +40,7 @@ var callback = () => api.sendMessage({body:`
 𝐆𝐦𝐚𝐢𝐥       : abirak289@gmail.com
 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩: wa.me/+966505720462
 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦  : t.me/Badshaabir321
-𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐋𝐢𝐧𝐤 : https://www.facebook.com/www.xnxx.com169`,attachment: fs.createReadStream(__dirname + "/cache/1.png")}, event.threadID, () => 
+𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 𝐋𝐢𝐧𝐤 : https://www.facebook.com/share/15GSEHE3YvM/`,attachment: fs.createReadStream(__dirname + "/cache/1.png")}, event.threadID, () => 
     fs.unlinkSync(__dirname + "/cache/1.png"));  
       return request(encodeURI(`https://i.postimg.cc/445nzLrk/inbound2798689236606089084.png`)).pipe(
 fs.createWriteStream(__dirname+'/cache/1.png')).on('close',() => callback());
