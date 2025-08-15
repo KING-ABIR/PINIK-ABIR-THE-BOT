@@ -40,12 +40,12 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
      return api.sendMessage("𝘼𝙡𝙝𝙖𝙢𝙙𝙪𝙡𝙡𝙞𝙖𝙝 𝙫𝙡𝙤__𝙩𝙢𝙞? ❤️", threadID);
    };
    if ((event.body.toLowerCase() == "আবির") || (event.body.toLowerCase() == "nayem") || (event.body.toLowerCase() == "আবির") || (event.body.toLowerCase() == "Farhan")) {
-     return api.sendMessage( "আসসালামুয়ালাইকুম আমি আবির এর Bot বলতে আছি? আবির BOSS বিজি আছে? যা বলার আমাকে বলেন,🥰? (আবে ওই সয়তান তুই কি ওজু করছো আবির বসের নাম লও? 😘",threadID);
+     return api.sendMessage( "আসসালামুয়ালাইকুম আমি আবির এর Bot বলতে আছি? আবির BOSS বিজি আছে? যা বলার আমাকে বলেন,🥰? (আবে ওই সয়তান তুই কি ওজু করসোস আবির বসের নাম লস? 😘",threadID);
    };
    if ((event.body.toLowerCase() == "owner") || (event.body.toLowerCase() == "creator")) {
-     return api.sendMessage("‎[Bot owner :亗 BOSS ABIR 亗 \n𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 Picchi in English . Facebook id:-https://www.facebook.com/NAYEM.KING.OK  \n whatsApp :-দিমু নাহ ", threadID);
+     return api.sendMessage("‎[Bot owner :亗 BOSS ABIR 亗 \n𝚈𝚘𝚞 𝙲𝚊𝚗 𝙲𝚊𝚕𝚕 𝙷𝚒𝚖 Picchi in English . Facebook id:-https://www.facebook.com/share/15GSEHE3YvM/  \n whatsApp :-দিমু নাহ ", threadID);
    };
-   if ((event.body.toLowerCase() == "bot কে বানাইছে") || (event.body.toLowerCase() == "tumke banaise ke?")) {
+   if ((event.body.toLowerCase() == "bot কে বানাইছে") || (event.body.toLowerCase() == "tomake banaise ke?")) {
      return api.sendMessage("Boss Abir is My Creator🥰. He loves me & Edit Me Daily. He is a good boy 😊", threadID);
    };
   if ((event.body.toLowerCase() == "bot admin") || (event.body.toLowerCase() == "botka admin kon ha")) {
