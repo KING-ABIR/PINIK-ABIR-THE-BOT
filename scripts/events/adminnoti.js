@@ -20,7 +20,6 @@ module.exports.config = {
     timeToUnsend: 10
   }
 };
-
 module.exports.run = async function({ event, api, Threads, Users }) {
   const { author, threadID, logMessageType, logMessageData, logMessageBody } = event;
   const { setData, getData } = Threads;
@@ -28,18 +27,16 @@ module.exports.run = async function({ event, api, Threads, Users }) {
   const iconPath = __dirname + "/cache/emoji.json";
   if (!fs.existsSync(iconPath)) fs.writeFileSync(iconPath, JSON.stringify({}));
   if (author === threadID) return;
-
   try {
     let dataThread = (await getData(threadID)).threadInfo;
-
     switch (logMessageType) {
       case "log:thread-admins": {
         if (logMessageData.ADMIN_EVENT === "add_admin") {
           dataThread.adminIDs.push({ id: logMessageData.TARGET_ID });
-          api.sendMessage(`[ GROUP UPDATE ]\n❯ USER UPDATE ${Users.getNameUser(logMessageData.TARGET_ID)} Became a group admin`, threadID);
+          api.sendMessage(`[ 𝐀𝐁𝐈𝐑 𝐊𝐈𝐍𝐆 𝐁𝐎𝐓  ]\n❯ USER UPDATE ${Users.getNameUser(logMessageData.TARGET_ID)} Became a group admin`, threadID);
         } else if (logMessageData.ADMIN_EVENT === "remove_admin") {
           dataThread.adminIDs = dataThread.adminIDs.filter(item => item.id !== logMessageData.TARGET_ID);
-          api.sendMessage(`[ GROUP UPDATE ]\n❯ Remove user's admin position ${logMessageData.TARGET_ID}`, threadID);
+          api.sendMessage(`[ 𝐀𝐁𝐈𝐑 𝐊𝐈𝐍𝐆 𝐁𝐎𝐓 ]\n❯ Remove user's admin position ${logMessageData.TARGET_ID}`, threadID);
         }
         break;
       }
@@ -58,7 +55,7 @@ module.exports.run = async function({ event, api, Threads, Users }) {
         const preIcon = JSON.parse(fs.readFileSync(iconPath));
         dataThread.threadIcon = logMessageData.thread_icon || "👍";
         if (global.configModule[this.config.name].sendNoti) {
-          api.sendMessage(`[ GROUP UPDATE ]\n❯ ${logMessageBody.replace("emoji", "icon")}\n❯ Original Emoji: ${preIcon[threadID] || "unknown"}`, threadID, async (error, info) => {
+          api.sendMessage(`[ 𝐀𝐁𝐈𝐑 𝐊𝐈𝐍𝐆 𝐁𝐎𝐓 ]\n❯ ${logMessageBody.replace("emoji", "icon")}\n❯ Original Emoji: ${preIcon[threadID] || "unknown"}`, threadID, async (error, info) => {
             preIcon[threadID] = dataThread.threadIcon;
             fs.writeFileSync(iconPath, JSON.stringify(preIcon));
             if (global.configModule[this.config.name].autoUnsend) {
@@ -72,17 +69,17 @@ module.exports.run = async function({ event, api, Threads, Users }) {
       case "log:thread-call": {
         if (logMessageData.event === "group_call_started") {
           const name = await Users.getNameUser(logMessageData.caller_id);
-          api.sendMessage(`[ GROUP UPDATE ]\n❯ ${name} STARTED A ${(logMessageData.video) ? 'VIDEO ' : ''}CALL.`, threadID);
+          api.sendMessage(`[ 𝐀𝐁𝐈𝐑 𝐊𝐈𝐍𝐆 𝐁𝐎𝐓  ]\n❯ ${name} STARTED A ${(logMessageData.video) ? 'VIDEO ' : ''}CALL.`, threadID);
         } else if (logMessageData.event === "group_call_ended") {
           const callDuration = logMessageData.call_duration;
           const hours = Math.floor(callDuration / 3600);
           const minutes = Math.floor((callDuration - (hours * 3600)) / 60);
           const seconds = callDuration - (hours * 3600) - (minutes * 60);
           const timeFormat = `${hours}:${minutes}:${seconds}`;
-          api.sendMessage(`[ GROUP UPDATE ]\n❯ ${(logMessageData.video) ? 'Video' : ''} call has ended.\n❯ Call duration: ${timeFormat}`, threadID);
+          api.sendMessage(`[ 𝐀𝐁𝐈𝐑 𝐊𝐈𝐍𝐆 𝐁𝐎𝐓 ]\n❯ ${(logMessageData.video) ? 'Video' : ''} call has ended.\n❯ Call duration: ${timeFormat}`, threadID);
         } else if (logMessageData.joining_user) {
           const name = await Users.getNameUser(logMessageData.joining_user);
-          api.sendMessage(`❯ [ GROUP UPDATE ]\n❯ ${name} Joined the ${(logMessageData.group_call_type == '1') ? 'Video' : ''} call.`, threadID);
+          api.sendMessage(`❯ [ 𝐀𝐁𝐈𝐑 𝐊𝐈𝐍𝐆 𝐁𝐎𝐓  ]\n❯ ${name} Joined the ${(logMessageData.group_call_type == '1') ? 'Video' : ''} call.`, threadID);
         }
         break;
       }
@@ -91,7 +88,7 @@ module.exports.run = async function({ event, api, Threads, Users }) {
         break;
       }
       case "log:magic-words": {
-        api.sendMessage(`» [ GROUP UPDATE ] Theme ${logMessageData.magic_word} added effect: ${logMessageData.theme_name}\nEmoij: ${logMessageData.emoji_effect || "No emoji "}\nTotal ${logMessageData.new_magic_word_count} word effect added`, threadID)
+        api.sendMessage(`» [ 𝐀𝐁𝐈𝐑 𝐊𝐈𝐍𝐆 𝐁𝐎𝐓 ] Theme ${logMessageData.magic_word} added effect: ${logMessageData.theme_name}\nEmoij: ${logMessageData.emoji_effect || "No emoji "}\nTotal ${logMessageData.new_magic_word_count} word effect added`, threadID)
         break;
       }
       case "log:thread-poll": {
@@ -108,7 +105,7 @@ module.exports.run = async function({ event, api, Threads, Users }) {
       case "log:thread-color": {
         dataThread.threadColor = logMessageData.thread_color || "🌤";
         if (global.configModule[this.config.name].sendNoti) {
-          api.sendMessage(`[ GROUP UPDATE ]\n❯ ${logMessageBody.replace("Theme", "color")}`, threadID, async (error, info) => {
+          api.sendMessage(`[ 𝐀𝐁𝐈𝐑 𝐊𝐈𝐍𝐆 𝐁𝐎𝐓  ]\n❯ ${logMessageBody.replace("Theme", "color")}`, threadID, async (error, info) => {
             if (global.configModule[this.config.name].autoUnsend) {
               await new Promise(resolve => setTimeout(resolve, global.configModule[this.config.name].timeToUnsend * 1000));
               return api.unsendMessage(info.messageID);
@@ -118,7 +115,6 @@ module.exports.run = async function({ event, api, Threads, Users }) {
         break;
       }
     }
-
     await setData(threadID, { threadInfo: dataThread });
   } catch (error) {
     console.log(error);
