@@ -84,8 +84,8 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
    if ((event.body.toLowerCase() == "pic daw") || (event.body.toLowerCase() == "photo daw")) {
      return api.sendMessage("️বসের in boxa জাও ওখানে দিছি😵", threadID);
    };
-   if ((event.body.toLowerCase() == "❤️") || (event.body.toLowerCase() == "❤️")) {
-     return api.sendMessage("️ ভালোবাসা নামক আব্লামি করতে চাইলে আবির বসের ইনবক্সে জা 🤨🥱", threadID);
+   if ((event.body.toLowerCase() == "💋") || (event.body.toLowerCase() == "❤️")) {
+     return api.sendMessage("️ নাউজুবিল্লাহ ছি ছি আল্লাহ সবাইকে আমার ABIR BOSS এর মতো ভালো করে দাও🤨🤨", threadID);
    };
    if ((event.body.toLowerCase() == "😒") || (event.body.toLowerCase() == "🙄")) {
      return api.sendMessage("️ ওইদিক এ কি দেখো জানু,আমি তো এইদিক এ 🤭😽", threadID);
