@@ -14,7 +14,7 @@ module.exports.config = {
 module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
 	let react = event.body.toLowerCase();
-	if(react.includes("i love you") ||
+	if(react.includes("love") ||
      react.includes("love") || 
 react.includes("Janu") || react.includes("xan") || react.includes("jan") || react.includes("sona") ||
 react.includes("xn") ||
