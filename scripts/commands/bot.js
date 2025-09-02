@@ -30,7 +30,7 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
    if ((event.body.toLowerCase() == "Bot boss") || (event.body.toLowerCase() == "আবির কে")) {
      return api.sendMessage("PINIK ABIR\nhttps://www.facebook.com/share/1F75zo2NVK/", threadID);
    };
-   if ((event.body.toLowerCase() == "Assalamu alaikum") || (event.body.toLowerCase() == "Assalamu alaikum")) {
+   if ((event.body.toLowerCase() == "আসসালামু আলাইকুম") || (event.body.toLowerCase() == "Assalamu alaikum")) {
      return api.sendMessage("𝐖𝐚𝐥𝐚𝐢𝐤𝐮𝐦 𝐀𝐬𝐬𝐚𝐥𝐚𝐦 ❤️🪽", threadID);
    };
    if ((event.body.toLowerCase() == "gd morning") || (event.body.toLowerCase() == "good morning")) {
